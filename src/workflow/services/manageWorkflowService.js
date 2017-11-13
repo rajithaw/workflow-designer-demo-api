@@ -2,7 +2,7 @@ import Workflow from '../../data/workflow';
 
 export class ManageWorkflowService {
     save (workflow, callback) {
-        if(workflow.id) {
+        if(!workflow.id) {
             Workflow.create(workflow, callback);
         } else {
             Workflow.update({id: workflow.id}, workflow, callback);
