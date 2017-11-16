@@ -10,8 +10,8 @@ const expect = chai.expect;
 describe('searchWorkflowService', () => {
 
     describe('find', () => {
-        it('should find workflows by the provided filter criteria', () => {
-            let filter = {
+        it('should find workflows by the provided query', () => {
+            let query = {
                 name: 'name 1',
                 createdAfter: '',
                 createdBefore: '',
@@ -37,7 +37,7 @@ describe('searchWorkflowService', () => {
                 .chain('exec')
                 .resolves(totalCount);
 
-            SearchWorkflowService.find(filter, (err, result) => {
+            SearchWorkflowService.find(query, (err, result) => {
                 workflowMock.verify();
                 workflowMock.restore();
 

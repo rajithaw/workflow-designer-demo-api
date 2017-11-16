@@ -2,8 +2,8 @@ import SearchWorkflowService from '../services/searchWorkflowService';
 import ManageWorkflowService from '../services/manageWorkflowService';
 
 export class WorkflowController {
-    find(filter, callback)  {
-        SearchWorkflowService.find(filter, callback);
+    find(query, callback)  {
+        SearchWorkflowService.find(query, callback);
     }
 
     findById(id, callback)  {

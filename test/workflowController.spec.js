@@ -12,14 +12,14 @@ describe('workflowController', () => {
 
     describe('find', () => {
         it('should call service', () => {
-            let filter = { name: 'workflow name' };
+            let query = { name: 'workflow name' };
             let callback = sinon.spy();
 
             let findSpy = sinon.stub(searchWorkflowService, 'find');
 
-            workflowController.find(filter, callback);
+            workflowController.find(query, callback);
 
-            expect(findSpy.calledWith(filter, callback)).to.equal(true);
+            expect(findSpy.calledWith(query, callback)).to.equal(true);
         });
     });
 
