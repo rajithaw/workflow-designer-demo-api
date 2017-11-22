@@ -4,14 +4,29 @@
   "description": "Backend for the workflow designer demo app",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/index.js",
-    "start:dev": "nodemon --watch ./src --watch ./test ./src/index.js --exec \"npm run lint && npm run test && npm run build && babel-node\"",
+    "start": "nodemon --ignore ./dist --exec \"npm run lint && npm run test && npm run build && npm run serve\"",
+    "start:dev": "nodemon --watch ./src --watch ./test --exec \"npm run lint && npm run test && npm run build && npm run serve:dev\"",
+    "serve": "node ./dist/index.js",
+    "serve:dev": "babel-node ./src/index.js",
     "build": "babel src -d dist",
     "lint": "eslint ./src/**/*.js ./test/**/*.spec.js",
     "test": "mocha --require babel-core/register ./test/**/*.spec.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajithaw/workflow-designer-demo-api.git"
+  },
+  "keywords": [
+    "workflow",
+    "designer",
+    "api"
+  ],
   "author": "Rajitha Wimalasooriya",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajithaw/workflow-designer-demo-api/issues"
+  },
+  "homepage": "https://github.com/rajithaw/workflow-designer-demo-api#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
